@@ -1,0 +1,155 @@
+
+<Base>
+    GridLayout:
+        id:'baseLayout'
+        size:root.size
+        cols:1
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            id:'TitleBar'
+            cols:2
+            size_hint_y: .05
+            canvas.before:
+                Color:
+                    rgba: 0.2980, 0.3372, 0.4156, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            GridLayout:
+                id:'notWindowButtons'
+                cols:1
+                size_hint_x:0.92
+                canvas.before:
+                    Color:
+                        rgba: 0.2980, 0.3372, 0.4156, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            BoxLayout:
+                id:'windowButtons'
+                cols:2
+                size_hint_x:0.08
+
+                canvas.before:
+                    Color:
+                        rgba: 0.2313, 0.2588, 0.3215, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                ImageButton:
+                    name:'titleMinimize'
+                    source:'D:/resources/minimize.png'
+                    pos_hint: {'center_x': 0.25, 'center_y': 0.5}
+                    size_hint: 0.8, 0.8
+
+                ImageButton:
+                    name:'titleCross'
+                    source: 'D:/resources/cross.png'
+                    pos_hint: {'center_x': 0.75, 'center_y': 0.5}
+                    size_hint: 0.8, 0.8
+
+        GridLayout:
+            id:'Mainscreen'
+            canvas.before:
+                Color:
+                    rgba: 0.1803, 0.2039, 0.2509, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        FloatLayout:
+            id:'BottomBar'
+            cols:1
+            size_hint_y: .15
+            canvas.before:
+                Color:
+                    rgba: 0.2980, 0.3372, 0.4156, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                id:'artBox'
+                pos_hint: {'left': 0, 'center_y': 0.5}
+                width: 350
+                size_hint_x: None
+                canvas.before:
+                    Color:
+                        rgba: 1, 0, 0, 1
+                    Line:
+                        width: 2
+                        rectangle: self.x, self.y, self.width, self.height
+
+            Label:
+                id:'songDetails'
+                width: 500
+                size_hint_x: None
+                pos_hint: {'center_x': 0.392, 'center_y': 0.5}
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 1, 1
+                    Line:
+                        width: 2
+                        rectangle: self.x, self.y, self.width, self.height
+
+
+                Label:
+
+                    id:'songName'
+                    text:"Bruh Moment"
+                    pos:(360,5)
+                    width:500
+                    text_size: self.width, self.height
+                    font_size:dp(20)
+                    valign: 'top'
+                    halign: 'left'
+                    size_hint_x: None
+                    canvas.before:
+                        Color:
+                            rgba: 0, 1, 1, 1
+                        Line:
+                            width: 1
+                            rectangle: self.x, self.y, self.width, self.height
+
+            BoxLayout:
+                id:'musicIconBox'
+                pos_hint: {'center_x': 0.9, 'center_y': 0.5}
+                width: 300
+                size_hint_x: None
+                height: 90
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 0, 1, 0, 1
+                    Line:
+                        width: 2
+                        rectangle: self.x, self.y, self.width, self.height
+
+                ImageButton:
+                    name:'previous'
+                    source:'D:/resources/previous.png'
+                    allow_stretch: False
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 0.6, 0.6
+
+                ImageButton:
+                    name:'playPause'
+                    source:'D:/resources/play.png'
+                    allow_stretch: False
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 0.8, 0.8
+
+                ImageButton:
+                    name:'next'
+                    source:'D:/resources/next.png'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 0.6, 0.6
